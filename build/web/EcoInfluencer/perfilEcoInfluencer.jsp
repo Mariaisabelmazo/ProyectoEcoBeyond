@@ -18,6 +18,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="icon" href="../Imagenes/hojita.png"/>
         <title>EcoBeyond</title>
+        <link href="CSS/estilos.css" rel="stylesheet" type="text/css"/>
         <link href="../CSS/estilos.css" rel="stylesheet" type="text/css"/>
         <script src="https://kit.fontawesome.com/338c5c72af.js" crossorigin="anonymous"></script>
     </head>
@@ -40,18 +41,18 @@
                     </ul>
                 </div>
                 <div class="opciones-perfil">
-                    <a href="../editar.jsp"><button href="" type="">Editar Perfil</button></a>
-                    <a href="../configuracion.jsp"><button type="">Configuración</button></a>
+                    <a href="editar.jsp"><button href="" type="">Editar Perfil</button></a>
+                    <a href="configuracion.jsp"><button type="">Configuración</button></a>
                 </div>
             </div>
         </div>
         <div class="menu-perfil">
             <ul>
-                <li><a href="../inicio.jsp" title="">Inicio</a></li>
-                <li><a href="../publicaciones.jsp" title="">Publicaciones</a></li>
-                <li><a href="../seguidores.jsp" title="">Seguidores</a></li>
-                <li><a href="../recomendados.jsp" title="">Recomendados</a></li>
-                <li><a href="../publicar.jsp" title="">Publicar</a></li>
+                <li><a href="inicio.jsp" title="">Inicio</a></li>
+                <li><a href="publicaciones.jsp" title="">Publicaciones</a></li>
+                <li><a href="seguidores.jsp" title="">Seguidores</a></li>
+                <li><a href="recomendados.jsp" title="">Recomendados</a></li>
+                <li><a href="publicar.jsp" title="">Publicar</a></li>
             </ul>
         </div>
     </section>

@@ -18,7 +18,7 @@
         <br/>
         <input class="entrada" type="text" name = "Nombre" id="Nombre" requiered="required" placeholder="Ingrese su Nombre:">
         <input class="entrada" type="email" name = "Correo" id="Correo" requiered="required" placeholder="Ingrese sus correo:">
-        <input class="entrada" type="text" name = "Contraseña" id="Contra" requiered="required" placeholder="Ingrese su Constraseña:">
+        <input class="entrada" type="text" name = "Contra" id="Contra" requiered="required" placeholder="Ingrese su Constraseña:">
         <p>Para registrarse como ecoInfluencer ingrese 1, para registrarse como EcoTurista ingrese 2</p>
         <input class="entrada" type="text" name = "idCargo" id="idCargo" requiered="required" placeholder="Tipo de usuario: ">
         <p>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></p>
@@ -26,7 +26,7 @@
         <button type="submit" name="enviar" value="Registrar" id="boton">Registrarse</button>
         
         <p><a href="login.jsp">¿Ya tienes Cuenta?</a></p>
-    </form> 
+    </form>
 
         <%
         if(request.getParameter("enviar") != null){
@@ -42,7 +42,7 @@
                 Class.forName("com.mysql.jdbc.Driver");
                 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbEcoBeyond","root","");
                 st = con.createStatement();
-                st.executeUpdate("insert into usuario ( nombre, correo, contraseña, idCargo) values('"+nombre+"','"+correo+"','"+contra+"','"+idCargo+"');");
+                st.executeUpdate("insert into usuario ( nombre, correo, contra, idCargo) values('"+nombre+"','"+correo+"','"+contra+"','"+idCargo+"');");
                 request.getRequestDispatcher("login.jsp").forward(request, response);
                 
             }catch(Exception e){

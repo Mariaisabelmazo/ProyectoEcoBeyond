@@ -51,10 +51,10 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <title>EcoBeyond</title>\n");
       out.write("        <link href=\"CSS/estilos.css\" rel=\"stylesheet\" type=\"text/css\"/>\n");
       out.write("    </head>\n");
-      out.write("    <body background=\"../Imagenes/nat.png\">\n");
+      out.write("    <body background=\"Imagenes/nat.png\">\n");
       out.write("        <div id=\"cuadro\">\n");
       out.write("            <form action=\"SERVLOGIN\" method=\"POST\">\n");
-      out.write("            <img src=\"Imagenes/Loguito (2).png\" height=\"200px\" width=\"350px\" title=\"logo\"/>\n");
+      out.write("            <img src=\"Imagenes/logotipo2.png\" height=\"200px\" width=\"350px\" title=\"logo\"/>\n");
       out.write("            <br/>\n");
       out.write("            <p id=\"titulo\">INICIAR SESIÓN</p>\n");
       out.write("            <hr>\n");
@@ -71,10 +71,7 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("                <div id=\"contenedor\">\n");
       out.write("            <div id=\"referencias\">\n");
-      out.write("                <a href=\"#\">Terminos de uso</a>\n");
-      out.write("                <br/>\n");
-      out.write("                <br/>\n");
-      out.write("                <center><a href=\"#\">Politica de privacidad</a></center>\n");
+      out.write("                <a href=\"index.jsp\">Volver al inicio</a>\n");
       out.write("            </div>\n");
       out.write("        </div>\n");
       out.write("        ");
@@ -86,13 +83,23 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
             if(cargo==1){
                 sesion.setAttribute("nombre", request.getAttribute("nombre"));
                 sesion.setAttribute("cargo", cargo);
-                response.sendRedirect("../EcoInfluencer/perfilEcoInfluencer.jsp");
+                response.sendRedirect("EcoInfluencer/perfilEcoInfluencer.jsp");
+            }
+        }
+                if(request.getAttribute("cargo") != null){
+            cargo = (Integer) request.getAttribute("cargo");
+            if(cargo==2){
+                sesion.setAttribute("nombre", request.getAttribute("nombre"));
+                sesion.setAttribute("cargo", cargo);
+                response.sendRedirect("perfilEcoTurista.jsp");
             }
         }
         if(request.getParameter("cerrar") != null){
             //invalida todas las sesiones
             session.invalidate();
         }
+
+        
         
       out.write("\n");
       out.write("    </body>\n");

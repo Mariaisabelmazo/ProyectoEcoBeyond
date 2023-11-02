@@ -83,7 +83,7 @@ public final class publicaciones_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("                <a href=\"seguidores.jsp\" title=\"\">Seguidores</a>\n");
       out.write("                <a href=\"recomendados.jsp\" title=\"\">Recomendados</a>\n");
       out.write("                <a href=\"configuracion.jsp\" title=\"\">Configuración</a>\n");
-      out.write("                <a href=\"Publicar.html\" title=\"\">Publicar</a>\n");
+      out.write("                <a href=\"publicar.jsp\" title=\"\">Publicar</a>\n");
       out.write("        </div>\n");
       out.write("    </section>\n");
       out.write("    <section class=\"contenedor galeria\">\n");

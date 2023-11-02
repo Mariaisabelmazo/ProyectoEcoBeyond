@@ -17,10 +17,12 @@ import javax.servlet.RequestDispatcher;
  * 
  * Clase que amplia la capacidad de el servidor
  */
+
 public class SERVLOGIN extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        System.out.println("Punto 0");
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             String nombre;
@@ -29,17 +31,33 @@ public class SERVLOGIN extends HttpServlet {
             Acceso acc = new Acceso();
             RequestDispatcher rd = null;
             
-            
-            if(request.getParameter("btnIniciar") != null){
-                nombre = request.getParameter("txtusuario");
-                contra = request.getParameter("txtcontra");
-                cargo = acc.validar(nombre, contra);
-                
-                request.setAttribute("cargo", cargo);
-                request.setAttribute("nombre", nombre);
-                rd = request.getRequestDispatcher("login.jsp");
-            }
-            rd.forward(request, response);
+            System.out.println("Punto 1");
+            if (request.getParameter("btnIniciar") != null) {
+                System.out.println("Punto 2");
+    nombre = request.getParameter("txtusuario");
+    contra = request.getParameter("txtcontra");
+    cargo = acc.validar(nombre, contra);
+    request.getSession().setAttribute("cargo", cargo);
+    request.getSession().setAttribute("nombre", nombre);
+    System.out.println(cargo);
+                switch (cargo) {
+                    case 1:
+                        // Redirige a la página del perfil del EcoInfluencer
+                        
+                        rd = request.getRequestDispatcher("EcoInfluencer/perfilEcoInfluencer.jsp");
+                        break;
+                    case 2:
+                        // Redirige a la página del perfil del EcoTurista
+                        rd = request.getRequestDispatcher("perfilEcoTurista.jsp");
+                        break;
+                    default:
+                        // La autenticación falló, muestra un mensaje de error en la página de inicio de sesión.
+                        request.getSession().setAttribute("error", "Nombre de usuario o contraseña incorrectos");
+                        rd = request.getRequestDispatcher("login.jsp");
+                        break;
+                }
+}
+rd.forward(request, response);
         }
     }
 

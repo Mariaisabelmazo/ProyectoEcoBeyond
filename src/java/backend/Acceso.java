@@ -27,7 +27,7 @@ public class Acceso {
         try{
             Class.forName(db.getDriver());
             con = DriverManager.getConnection(db.getUrl(), db.getUser(), db.getContra());
-            sql = "select idcargo from usuario where nombre='"+usuario+"' and contraseña='"+contra+"'";
+            sql = "select idCargo from usuario where nombre='"+usuario+"' and contra='"+contra+"'";
             pst = con.prepareStatement(sql);
             //El cargo de la persona estaría en esta variable rs
             rs = pst.executeQuery();

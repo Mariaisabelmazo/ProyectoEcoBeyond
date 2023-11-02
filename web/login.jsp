@@ -16,11 +16,11 @@
             <p id="titulo">INICIAR SESIÓN</p>
             <hr>
             <br/><br/>
-            <input class="entrada" type="text" name = "txtusuario" id="Nombre" placeholder="Ingrese su nombre de usuario">
+            <input class="entrada" type="text" name="txtusuario" id="nombre" placeholder="Ingrese su nombre de usuario">
             <br/><br/>
-            <input class="entrada" type="password" name = "txtcontra" id="Contraseña" placeholder="Ingrese su contraseña">
+            <input class="entrada" type="text" name="txtcontra" id="contra" placeholder="Ingrese su contraseña">
             <br/><br/>
-            <input type="submit" name="btnIniciar" value="Iniciar sesión" id="boton"/>
+            <button type="submit" name="btnIniciar" value="Iniciar Sesion" id="boton">Iniciar sesion</button>
             <br/><br/>
             <a href="registroEcoInfluencer.jsp"><input  type="button" value="Crear una cuenta" class="btn btn-primary" id="boton2"/></a>
             </form>  
@@ -31,6 +31,7 @@
                 <a href="index.jsp">Volver al inicio</a>
             </div>
         </div>
+        
         <% 
         HttpSession sesion = request.getSession();
         int cargo = 0;
